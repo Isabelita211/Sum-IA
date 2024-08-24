@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chat</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <section class="chat-container">
+            <div class="chat-log">
+                <!-- Aquí se mostrarán los mensajes del chat -->
+            </div>
+            <div class="input-container">
+                <textarea placeholder="Escribe aqui" id="message-input"></textarea>
+                <button id="send-button">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm8-10C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2Zm0 4a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z">
+                        </path>
+                    </svg>
+                </button>
+                <button id="telegram-button">
+                    <img src="enviar-mensaje.png" alt="Enviar mensaje">
+                </button>
+            </div>
+            <!-- Agregamos un contenedor para las bolitas -->
+            <div class="bolitas-container"></div>
+        </section>
+        <script src="bolitasanimation.js"></script>
+    </body>
+</html>

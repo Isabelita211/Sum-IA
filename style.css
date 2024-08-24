@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Fondo oscuro */
+}
+
+.chat-container {
+    height: 600px; /* Aumenta el tamaño del contenedor */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-log {
+    flex: 1; /* Ocupa el espacio disponible */
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.input-container {
+    padding: 10px;
+    border-top: 1px solid #444; /* Borde oscuro */
+    background-color: #333; /* Fondo oscuro */
+    position: absolute; /* Posiciona el input container al final */
+    bottom: 0;
+    left: 50%; /* Centra el contenedor horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición para que esté centrado */
+    width: 95%; /* Ocupa casi todo el ancho */
+    height: 50px;
+    display: flex; /* Para que el textarea y el botón estén en la misma fila */
+}
+
+#message-input {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    padding: 15px 20px; /* Agrega un padding a los lados */
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    background-color: #444; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    resize: none; /* No permite que el usuario cambie el tamaño del textarea */
+    width: 100%; /* Ocupa todo el ancho */
+}
+#send-button {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: #666; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    cursor: pointer;
+}
+
+#send-button svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+#telegram-button {
+    background-color: transparent; /* Agrega esto */
+    border: none; /* Elimina el borde del botón */
+    padding: 10px; /* Agrega un padding para que el botón tenga espacio */
+    border-radius: 30px; /* Redondea los bordes del botón */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es un botón */
+}
+
+#telegram-button img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Estilos para el contenedor de las bolitas */
+.bolitas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+  /* Estilos para las bolitas */
+.bolita {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.bolita.animate {
+    animation: moverse 10s infinite;
+}
+
+@keyframes moverse {
+    0% {
+    transform: translateX(0);
+    }
+    100% {
+    transform: translateX(100vw);
+    }
+}
