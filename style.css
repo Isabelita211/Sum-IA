@@ -40,7 +40,9 @@ body {
     color: #fff; /* Texto blanco */
     resize: none; /* No permite que el usuario cambie el tamaño del textarea */
     width: 100%; /* Ocupa todo el ancho */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra leve */
 }
+
 #send-button {
     margin-left: 10px;
     padding: 10px;
@@ -49,6 +51,7 @@ body {
     background-color: #666; /* Fondo oscuro */
     color: #fff; /* Texto blanco */
     cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra leve */
 }
 
 #send-button svg {
@@ -63,6 +66,7 @@ body {
     padding: 10px; /* Agrega un padding para que el botón tenga espacio */
     border-radius: 30px; /* Redondea los bordes del botón */
     cursor: pointer; /* Cambia el cursor a una mano para indicar que es un botón */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra leve */
 }
 
 #telegram-button img {
