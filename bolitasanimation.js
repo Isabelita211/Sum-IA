@@ -25,8 +25,8 @@ for (let i = 0; i < 10; i++) {
 function animarBolitas() {
     bolitas.forEach((bolita) => {
         // Agregamos una velocidad mínima para cada bolita
-        const velocidadX = 1.5; // velocidad mínima en el eje X
-        const velocidadY = 1.5; // velocidad mínima en el eje Y
+        const velocidadX = 5; // velocidad mínima en el eje X
+        const velocidadY = 5; // velocidad mínima en el eje Y
 
         // Agregamos una función para actualizar la posición de la bolita
         function actualizarPosicion() {

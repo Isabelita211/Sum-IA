@@ -43,7 +43,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra leve */
 }
 
-#send-button {
+#upload-button {
     margin-left: 10px;
     padding: 10px;
     border: none;
@@ -54,13 +54,13 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra leve */
 }
 
-#send-button svg {
+#upload-button svg {
     width: 30px;
     height: 30px;
     fill: #fff;
 }
 
-#telegram-button {
+#send-button {
     margin-left: 10px;
     background-color: #666; /* Fondo oscuro */
     border: none; /* Elimina el borde del botón */
@@ -70,7 +70,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra leve */
 }
 
-#telegram-button img {
+#send-button img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
