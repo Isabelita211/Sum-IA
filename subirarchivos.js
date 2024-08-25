@@ -58,9 +58,22 @@ sendButton.addEventListener('click', () => {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
+    .then(response => {
+        console.log('Response received:', response);
+        return response.json();
+    })
+    .then(data => {
+        console.log('Data received:', data);
+        const analysisLi = document.createElement('li');
+        analysisLi.className = 'ai-message';
+        const analysisSpan = document.createElement('span');
+        analysisSpan.textContent = data.analysis_result;
+        analysisLi.appendChild(analysisSpan);
+        chatContainer.appendChild(analysisLi);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
     // Limpia el textarea y el input de tipo file
     messageInput.value = '';

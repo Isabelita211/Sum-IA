@@ -7,6 +7,7 @@ body {
 
 .chat-container {
     height: 600px; /* Aumenta el tamaño del contenedor */
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -26,7 +27,7 @@ body {
     bottom: 0;
     left: 50%; /* Centra el contenedor horizontalmente */
     transform: translateX(-50%); /* Ajusta la posición para que esté centrado */
-    width: 95%; /* Ocupa casi todo el ancho */
+    width: 80%; /* Ocupa casi todo el ancho */
     height: 50px;
     display: flex; /* Para que el textarea y el botón estén en la misma fila */
     border-radius: 15px;
