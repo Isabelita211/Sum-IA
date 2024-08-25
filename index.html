@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <title>Chat</title>
@@ -9,6 +9,7 @@
         <section class="chat-container">
             <div class="chat-log">
                 <!-- Aquí se mostrarán los mensajes del chat -->
+                <ul id="chat-messages"></ul>
             </div>
             <div class="input-container">
                 <textarea placeholder="Escribe aqui" id="message-input"></textarea>
@@ -20,13 +21,12 @@
                     </svg>
                 </button>
                 <button id="send-button">
-                    <img src="enviar-mensaje.png" alt="Enviar mensaje">
+                    <img src="enviar-mensaje.png" alt="Enviar mensaje" />
                 </button>
             </div>
             <!-- Agregamos un contenedor para las bolitas -->
             <div class="bolitas-container"></div>
         </section>
-        <script src="bolitasanimation.js"></script>
-        <script src="subirarchivos.js"></script>
-    </body>
+        <script type="text/javascript" src="bolitasanimation.js" charset="utf-8"></script>
+        <script type="text/javascript" src="subirarchivos.js" charset="utf-8"></script>
 </html>

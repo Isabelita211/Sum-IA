@@ -25,8 +25,8 @@ for (let i = 0; i < 10; i++) {
 function animarBolitas() {
     bolitas.forEach((bolita) => {
         // Agregamos una velocidad mínima para cada bolita
-        const velocidadX = 5; // velocidad mínima en el eje X
-        const velocidadY = 5; // velocidad mínima en el eje Y
+        const velocidadX = 2; // velocidad mínima en el eje X
+        const velocidadY = 2; // velocidad mínima en el eje Y
 
         // Agregamos una función para actualizar la posición de la bolita
         function actualizarPosicion() {
@@ -42,10 +42,10 @@ function animarBolitas() {
 // Iniciamos la animación
 animarBolitas();
 
-// Creamos un intervalo para crear nuevas bolitas cada 15 segundos
+// Creamos un intervalo para crear nuevas bolitas cada 20 segundos
 setInterval(() => {
     crearBolita();
-}, 15000);
+}, 20000);
 
 // Agregamos un estilo para las bolitas
 document.querySelector(".bolitas-container").style.overflow = "hidden";

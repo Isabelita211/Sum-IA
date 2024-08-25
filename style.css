@@ -9,6 +9,7 @@ body {
     height: 600px; /* Aumenta el tamaño del contenedor */
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 }
 
 .chat-log {
@@ -107,4 +108,56 @@ body {
     100% {
     transform: translateX(100vw);
     }
+}
+
+.chat-log {
+    padding: 20px;
+}
+
+.chat-log ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chat-log li {
+    margin-bottom: 10px;
+}
+
+.user-message {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    float: right;
+    max-width: 40%; /* Agrega un ancho máximo para que no ocupe todo el largo de la pantalla */
+    margin-right: 20px; /* Agrega un margen a la derecha para que no se pegue al borde */
+}
+
+.ai-message {
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    float: left;
+    clear: both;
+}
+
+.user-message span {
+    font-size: 16px;
+    color: #333;
+}
+
+.user-message span.file-message {
+    color: #fff; /* Texto blanco para el mensaje subido */
+}
+
+#chat-messages li {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.user-message-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px; /* Agrega un margen inferior para separar los mensajes */
 }

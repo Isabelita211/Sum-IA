@@ -1,7 +1,13 @@
 const uploadButton = document.getElementById('upload-button');
-const fileInput = document.getElementById('file-input');
 const sendButton = document.getElementById('send-button');
-const textarea = document.getElementById('message-input');
+const fileInput = document.getElementById('file-input');
+const messageInput = document.getElementById('message-input');
+const chatMessages = document.getElementById('chat-messages');
+
+// Agrega un contenedor div para los mensajes del chat
+const chatContainer = document.createElement('div');
+chatContainer.className = 'chat-container';
+chatMessages.appendChild(chatContainer);
 
 uploadButton.addEventListener('click', () => {
     fileInput.click();
@@ -14,18 +20,49 @@ fileInput.addEventListener('change', (e) => {
 
     if (allowedTypes.includes(fileType)) {
         const fileName = file.name;
-        textarea.value = `Archivo seleccionado: ${fileName}`;
+        const message = messageInput.value;
+        if (message.trim() !== '') {
+            messageInput.value = `${message}\nArchivo: ${fileName}`;
+        } else {
+            alert('Por favor, escriba un mensaje antes de subir un archivo');
+            fileInput.value = '';
+        }
     } else {
-    alert('Solo se aceptan archivos Word (.docx) y PDF');
-    fileInput.value = '';
+        alert('Solo se aceptan archivos Word (.docx) y PDF');
+        fileInput.value = '';
     }
 });
 
 sendButton.addEventListener('click', () => {
     const file = fileInput.files[0];
-  // Aquí envías el archivo seleccionado
-    console.log(file);
-  // Limpia el textarea y el input de tipo file
-    textarea.value = '';
+    const message = messageInput.value;
+
+    // Crea un nuevo elemento li para el mensaje del usuario y el archivo subido
+    const messageLi = document.createElement('li');
+    messageLi.className = 'user-message'; // Agrega la clase CSS para la burbuja de texto del usuario
+
+    // Agrega el mensaje del usuario
+    const userMessageSpan = document.createElement('span');
+    userMessageSpan.textContent = message;
+    messageLi.appendChild(userMessageSpan);
+
+    // Agrega el elemento li al contenedor de mensajes del chat
+    chatContainer.appendChild(messageLi);
+
+    // Envía el archivo seleccionado
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('message', message);
+
+    fetch('/upload', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+    // Limpia el textarea y el input de tipo file
+    messageInput.value = '';
     fileInput.value = '';
 });
