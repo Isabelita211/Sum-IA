@@ -20,8 +20,8 @@ body {
 
 .input-container {
     padding: 10px;
-    border-top: 1px solid #444; /* Borde oscuro */
-    background-color: #333; /* Fondo oscuro */
+    border-top: 1px solid #2a2a2a; /* Borde oscuro */
+    background-color: #5f4977; /* Fondo oscuro */
     position: absolute; /* Posiciona el input container al final */
     bottom: 0;
     left: 50%; /* Centra el contenedor horizontalmente */
@@ -31,14 +31,18 @@ body {
     display: flex; /* Para que el textarea y el botón estén en la misma fila */
 }
 
+#message-input::placeholder {
+    color: #000000; /* Cambia #ccc por el color que deseas */
+}
+
 #message-input {
     flex: 1; /* Ocupa todo el espacio disponible */
     padding: 15px 20px; /* Agrega un padding a los lados */
     border: none;
     border-radius: 40px;
     font-size: 16px;
-    background-color: #444; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
+    background-color: #747474; /* Fondo oscuro */
+    color: #000000; /* Texto negro */
     resize: none; /* No permite que el usuario cambie el tamaño del textarea */
     width: 100%; /* Ocupa todo el ancho */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra leve */
@@ -49,8 +53,8 @@ body {
     padding: 10px;
     border: none;
     border-radius: 30px;
-    background-color: #666; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
+    background-color: #747474; /* Fondo oscuro */
+    color: #000000; /* Texto negro */
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra leve */
 }
@@ -63,7 +67,7 @@ body {
 
 #send-button {
     margin-left: 10px;
-    background-color: #666; /* Fondo oscuro */
+    background-color: #747474; /* Fondo oscuro */
     border: none; /* Elimina el borde del botón */
     padding: 10px; /* Agrega un padding para que el botón tenga espacio */
     border-radius: 30px; /* Redondea los bordes del botón */
