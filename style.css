@@ -21,7 +21,7 @@ body {
 .input-container {
     padding: 10px;
     border-top: 1px solid #2a2a2a; /* Borde oscuro */
-    background-color: #5f4977; /* Fondo oscuro */
+    background-color: #703fa4; /* Fondo */
     position: absolute; /* Posiciona el input container al final */
     bottom: 0;
     left: 50%; /* Centra el contenedor horizontalmente */
@@ -29,6 +29,7 @@ body {
     width: 95%; /* Ocupa casi todo el ancho */
     height: 50px;
     display: flex; /* Para que el textarea y el botón estén en la misma fila */
+    border-radius: 15px;
 }
 
 #message-input::placeholder {
