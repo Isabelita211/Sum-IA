@@ -8,6 +8,7 @@ body {
 .chat-container {
     height: 600px; /* Aumenta el tamaño del contenedor */
     width: 90%;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -140,12 +141,23 @@ body {
     margin-right: 20px; /* Agrega un margen a la derecha para que no se pegue al borde */
 }
 
-.ai-message {
-    background-color: #ccc;
-    padding: 10px;
+.ia-message {
+    background-color: #f0f0f0;
     border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
     float: left;
-    clear: both;
+    max-width: 40%; /* Agrega un ancho máximo para que no ocupe todo el largo de la pantalla */
+    margin-left: 20px; /* Agrega un margen a la izquierda para que no se pegue al borde */
+}
+
+.ia-message span.file-message {
+    color: #fff; /* Texto blanco para el mensaje subido */
+}
+
+.ia-message span {
+    font-size: 16px;
+    color: #333;
 }
 
 .user-message span {
@@ -165,5 +177,11 @@ body {
 .user-message-container {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 10px; /* Agrega un margen inferior para separar los mensajes */
+}
+
+.ia-message-container {
+    display: flex;
+    justify-content: flex-start;
     margin-bottom: 10px; /* Agrega un margen inferior para separar los mensajes */
 }

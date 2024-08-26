@@ -35,6 +35,10 @@ fileInput.addEventListener('change', (e) => {
 
 sendButton.addEventListener('click', () => {
     const file = fileInput.files[0];
+    if (!file) {
+        alert('Por favor, seleccione un archivo antes de enviar');
+        return;
+    }
     const message = messageInput.value;
 
     // Crea un nuevo elemento li para el mensaje del usuario y el archivo subido
@@ -54,22 +58,27 @@ sendButton.addEventListener('click', () => {
     formData.append('file', file);
     formData.append('message', message);
 
-    fetch('/upload', {
+    fetch('http://127.0.0.1:8000/analysis/upload/', {
         method: 'POST',
-        body: formData
+        body: formData,
     })
-    .then(response => {
-        console.log('Response received:', response);
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
+        console.log('Debug:', data.debug);
         console.log('Data received:', data);
-        const analysisLi = document.createElement('li');
-        analysisLi.className = 'ai-message';
-        const analysisSpan = document.createElement('span');
-        analysisSpan.textContent = data.analysis_result;
-        analysisLi.appendChild(analysisSpan);
-        chatContainer.appendChild(analysisLi);
+        console.log('Analysis result:', data.analysis_result);
+    
+        // Crea un nuevo elemento li para el mensaje del usuario y el archivo subido
+        const messageLi = document.createElement('li');
+        messageLi.className = 'ia-message'; // Agrega la clase CSS para la burbuja de texto del usuario
+    
+        // Agrega el mensaje de la ia
+        const iaMessageSpan = document.createElement('span');
+        iaMessageSpan.textContent = data.analysis_result; // Asigna el resultado de la análisis aquí
+        messageLi.appendChild(iaMessageSpan);
+    
+        // Agrega el elemento li al contenedor de mensajes del chat
+        chatContainer.appendChild(messageLi);
     })
     .catch(error => {
         console.error('Error:', error);
