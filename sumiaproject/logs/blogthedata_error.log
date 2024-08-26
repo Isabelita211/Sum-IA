@@ -1,0 +1,12 @@
+ERROR 2024-08-26 18:44:05,567 django.request Thread-1 (process_request_thread) 8880 log log.py 248 django.request log_response 10408 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 18:44:05,571 django.server Thread-1 (process_request_thread) 8880 basehttp basehttp.py 213 django.server log_message 10408 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 18:54:34,761 django.request Thread-1 (process_request_thread) 9088 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 18:54:34,763 django.server Thread-1 (process_request_thread) 9088 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 18:58:01,687 django.request Thread-2 (process_request_thread) 7220 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 18:58:01,688 django.server Thread-2 (process_request_thread) 7220 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 19:00:19,639 django.request Thread-2 (process_request_thread) 7220 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 19:00:19,823 django.server Thread-2 (process_request_thread) 7220 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 19:02:23,649 django.request Thread-3 (process_request_thread) 9504 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 19:02:23,653 django.server Thread-3 (process_request_thread) 9504 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 19:05:28,260 django.request Thread-1 (process_request_thread) 17688 log log.py 248 django.request log_response 6104 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 19:05:31,000 django.server Thread-1 (process_request_thread) 17688 basehttp basehttp.py 213 django.server log_message 6104 "POST /analysis/upload/ HTTP/1.1" 500 34

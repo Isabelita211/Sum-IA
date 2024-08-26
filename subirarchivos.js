@@ -60,29 +60,45 @@ sendButton.addEventListener('click', () => {
 
     fetch('http://127.0.0.1:8000/analysis/upload/', {
         method: 'POST',
+        mode: 'cors',
         body: formData,
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
-        console.log('Debug:', data.debug);
         console.log('Data received:', data);
-        console.log('Analysis result:', data.analysis_result);
-    
-        // Crea un nuevo elemento li para el mensaje del usuario y el archivo subido
-        const messageLi = document.createElement('li');
-        messageLi.className = 'ia-message'; // Agrega la clase CSS para la burbuja de texto del usuario
-    
-        // Agrega el mensaje de la ia
-        const iaMessageSpan = document.createElement('span');
-        iaMessageSpan.textContent = data.analysis_result; // Asigna el resultado de la análisis aquí
-        messageLi.appendChild(iaMessageSpan);
-    
-        // Agrega el elemento li al contenedor de mensajes del chat
-        chatContainer.appendChild(messageLi);
+        if (data.error) {
+            console.error('Error:', data.error);
+
+        } else if (data.analysis_result) {
+            // Crea un nuevo elemento li para el mensaje del usuario y el archivo subido
+            const messageLi = document.createElement('li');
+            messageLi.className = 'ia-message'; // Agrega la clase CSS para la burbuja de texto del usuario
+
+            // Agrega el mensaje de la ia
+            const iaMessageSpan = document.createElement('span');
+            iaMessageSpan.textContent = data.analysis_result; // Asigna el resultado de la análisis aquí
+            messageLi.appendChild(iaMessageSpan);
+
+            // Agrega el elemento li al contenedor de mensajes del chat
+            chatContainer.appendChild(messageLi);
+        } else {
+            console.log('La respuesta no tiene la propiedad analysis_result');
+        }
     })
     .catch(error => {
         console.error('Error:', error);
-    });
+        if (error instanceof Error && error.message.includes('HTTP error')) {
+            console.error('HTTP error:', error.message);
+        }
+    })
 
     // Limpia el textarea y el input de tipo file
     messageInput.value = '';

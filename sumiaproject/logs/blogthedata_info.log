@@ -1,0 +1,23 @@
+INFO 2024-08-26 18:40:38,416 django.utils.autoreload MainThread 3312 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 9732 Watching for file changes with StatReloader
+INFO 2024-08-26 18:40:59,296 django.utils.autoreload MainThread 7380 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 10408 Watching for file changes with StatReloader
+ERROR 2024-08-26 18:44:05,567 django.request Thread-1 (process_request_thread) 8880 log log.py 248 django.request log_response 10408 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 18:44:05,571 django.server Thread-1 (process_request_thread) 8880 basehttp basehttp.py 213 django.server log_message 10408 "POST /analysis/upload/ HTTP/1.1" 500 34
+INFO 2024-08-26 18:49:18,681 django.utils.autoreload MainThread 7380 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10408 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 18:49:20,057 django.utils.autoreload MainThread 8504 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 18020 Watching for file changes with StatReloader
+INFO 2024-08-26 18:51:25,826 django.utils.autoreload MainThread 8504 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18020 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 18:51:26,744 django.utils.autoreload MainThread 9104 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 18148 Watching for file changes with StatReloader
+INFO 2024-08-26 18:53:09,291 django.utils.autoreload MainThread 13236 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 15880 Watching for file changes with StatReloader
+ERROR 2024-08-26 18:54:34,761 django.request Thread-1 (process_request_thread) 9088 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 18:54:34,763 django.server Thread-1 (process_request_thread) 9088 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 18:58:01,687 django.request Thread-2 (process_request_thread) 7220 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 18:58:01,688 django.server Thread-2 (process_request_thread) 7220 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 19:00:19,639 django.request Thread-2 (process_request_thread) 7220 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 19:00:19,823 django.server Thread-2 (process_request_thread) 7220 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 19:02:23,649 django.request Thread-3 (process_request_thread) 9504 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 19:02:23,653 django.server Thread-3 (process_request_thread) 9504 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+INFO 2024-08-26 19:04:14,087 django.utils.autoreload MainThread 13236 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15880 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\sumiaproject\settings.py changed, reloading.
+INFO 2024-08-26 19:04:15,911 django.utils.autoreload MainThread 17976 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 13532 Watching for file changes with StatReloader
+INFO 2024-08-26 19:04:21,291 django.utils.autoreload MainThread 17976 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 13532 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\sumiaproject\settings.py changed, reloading.
+INFO 2024-08-26 19:04:22,550 django.utils.autoreload MainThread 14396 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 6104 Watching for file changes with StatReloader
+ERROR 2024-08-26 19:05:28,260 django.request Thread-1 (process_request_thread) 17688 log log.py 248 django.request log_response 6104 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 19:05:31,000 django.server Thread-1 (process_request_thread) 17688 basehttp basehttp.py 213 django.server log_message 6104 "POST /analysis/upload/ HTTP/1.1" 500 34
