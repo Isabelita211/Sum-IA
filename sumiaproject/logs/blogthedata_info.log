@@ -55,3 +55,5 @@ INFO 2024-08-26 21:40:34,103 django.utils.autoreload MainThread 2484 autoreload 
 INFO 2024-08-26 21:40:35,198 django.utils.autoreload MainThread 17828 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 6528 Watching for file changes with StatReloader
 INFO 2024-08-26 21:40:40,456 django.utils.autoreload MainThread 17828 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 6528 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
 INFO 2024-08-26 21:40:41,851 django.utils.autoreload MainThread 9064 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 15128 Watching for file changes with StatReloader
+ERROR 2024-08-26 21:47:48,135 django.request Thread-1 (process_request_thread) 7152 log log.py 248 django.request log_response 15128 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:47:48,142 django.server Thread-1 (process_request_thread) 7152 basehttp basehttp.py 213 django.server log_message 15128 "POST /analysis/upload/ HTTP/1.1" 500 34

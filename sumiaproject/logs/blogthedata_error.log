@@ -18,3 +18,5 @@ ERROR 2024-08-26 21:30:20,979 django.request Thread-1 (process_request_thread) 7
 ERROR 2024-08-26 21:30:21,253 django.server Thread-1 (process_request_thread) 7888 basehttp basehttp.py 213 django.server log_message 7224 "POST /analysis/upload/ HTTP/1.1" 500 34
 ERROR 2024-08-26 21:32:22,263 django.request Thread-1 (process_request_thread) 7996 log log.py 248 django.request log_response 18076 Internal Server Error: /analysis/upload/
 ERROR 2024-08-26 21:32:23,187 django.server Thread-1 (process_request_thread) 7996 basehttp basehttp.py 213 django.server log_message 18076 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 21:47:48,135 django.request Thread-1 (process_request_thread) 7152 log log.py 248 django.request log_response 15128 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:47:48,142 django.server Thread-1 (process_request_thread) 7152 basehttp basehttp.py 213 django.server log_message 15128 "POST /analysis/upload/ HTTP/1.1" 500 34
