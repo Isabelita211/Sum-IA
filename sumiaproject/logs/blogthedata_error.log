@@ -10,3 +10,11 @@ ERROR 2024-08-26 19:02:23,649 django.request Thread-3 (process_request_thread) 9
 ERROR 2024-08-26 19:02:23,653 django.server Thread-3 (process_request_thread) 9504 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
 ERROR 2024-08-26 19:05:28,260 django.request Thread-1 (process_request_thread) 17688 log log.py 248 django.request log_response 6104 Internal Server Error: /analysis/upload/
 ERROR 2024-08-26 19:05:31,000 django.server Thread-1 (process_request_thread) 17688 basehttp basehttp.py 213 django.server log_message 6104 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 21:20:28,715 django.request Thread-1 (process_request_thread) 11712 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:20:30,299 django.server Thread-1 (process_request_thread) 11712 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 21:23:13,440 django.request Thread-2 (process_request_thread) 12812 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:23:14,361 django.server Thread-2 (process_request_thread) 12812 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 21:30:20,979 django.request Thread-1 (process_request_thread) 7888 log log.py 248 django.request log_response 7224 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:30:21,253 django.server Thread-1 (process_request_thread) 7888 basehttp basehttp.py 213 django.server log_message 7224 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 21:32:22,263 django.request Thread-1 (process_request_thread) 7996 log log.py 248 django.request log_response 18076 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:32:23,187 django.server Thread-1 (process_request_thread) 7996 basehttp basehttp.py 213 django.server log_message 18076 "POST /analysis/upload/ HTTP/1.1" 500 34

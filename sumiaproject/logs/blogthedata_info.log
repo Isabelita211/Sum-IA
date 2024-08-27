@@ -21,3 +21,37 @@ INFO 2024-08-26 19:04:21,291 django.utils.autoreload MainThread 17976 autoreload
 INFO 2024-08-26 19:04:22,550 django.utils.autoreload MainThread 14396 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 6104 Watching for file changes with StatReloader
 ERROR 2024-08-26 19:05:28,260 django.request Thread-1 (process_request_thread) 17688 log log.py 248 django.request log_response 6104 Internal Server Error: /analysis/upload/
 ERROR 2024-08-26 19:05:31,000 django.server Thread-1 (process_request_thread) 17688 basehttp basehttp.py 213 django.server log_message 6104 "POST /analysis/upload/ HTTP/1.1" 500 34
+INFO 2024-08-26 21:19:53,116 django.utils.autoreload MainThread 12692 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 15880 Watching for file changes with StatReloader
+ERROR 2024-08-26 21:20:28,715 django.request Thread-1 (process_request_thread) 11712 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:20:30,299 django.server Thread-1 (process_request_thread) 11712 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-26 21:23:13,440 django.request Thread-2 (process_request_thread) 12812 log log.py 248 django.request log_response 15880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:23:14,361 django.server Thread-2 (process_request_thread) 12812 basehttp basehttp.py 213 django.server log_message 15880 "POST /analysis/upload/ HTTP/1.1" 500 34
+INFO 2024-08-26 21:25:18,958 django.utils.autoreload MainThread 12692 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15880 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\sumiaproject\settings.py changed, reloading.
+INFO 2024-08-26 21:25:20,323 django.utils.autoreload MainThread 12268 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 14388 Watching for file changes with StatReloader
+INFO 2024-08-26 21:27:03,937 django.utils.autoreload MainThread 12268 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 14388 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:27:05,048 django.utils.autoreload MainThread 6484 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 8624 Watching for file changes with StatReloader
+INFO 2024-08-26 21:27:11,182 django.utils.autoreload MainThread 6484 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8624 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:27:12,345 django.utils.autoreload MainThread 16540 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 18172 Watching for file changes with StatReloader
+INFO 2024-08-26 21:27:23,762 django.utils.autoreload MainThread 16540 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18172 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:27:24,962 django.utils.autoreload MainThread 9560 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 8988 Watching for file changes with StatReloader
+INFO 2024-08-26 21:28:00,791 django.utils.autoreload MainThread 9560 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 8988 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:28:02,424 django.utils.autoreload MainThread 6924 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 4792 Watching for file changes with StatReloader
+INFO 2024-08-26 21:29:01,095 django.utils.autoreload MainThread 6924 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 4792 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:29:02,244 django.utils.autoreload MainThread 5780 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 10216 Watching for file changes with StatReloader
+INFO 2024-08-26 21:29:38,398 django.utils.autoreload MainThread 5780 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 10216 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:29:39,713 django.utils.autoreload MainThread 17580 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 9896 Watching for file changes with StatReloader
+INFO 2024-08-26 21:29:58,900 django.utils.autoreload MainThread 17580 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 9896 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:30:00,343 django.utils.autoreload MainThread 14544 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 7224 Watching for file changes with StatReloader
+ERROR 2024-08-26 21:30:20,979 django.request Thread-1 (process_request_thread) 7888 log log.py 248 django.request log_response 7224 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:30:21,253 django.server Thread-1 (process_request_thread) 7888 basehttp basehttp.py 213 django.server log_message 7224 "POST /analysis/upload/ HTTP/1.1" 500 34
+INFO 2024-08-26 21:32:08,298 django.utils.autoreload MainThread 1552 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 18076 Watching for file changes with StatReloader
+ERROR 2024-08-26 21:32:22,263 django.request Thread-1 (process_request_thread) 7996 log log.py 248 django.request log_response 18076 Internal Server Error: /analysis/upload/
+ERROR 2024-08-26 21:32:23,187 django.server Thread-1 (process_request_thread) 7996 basehttp basehttp.py 213 django.server log_message 18076 "POST /analysis/upload/ HTTP/1.1" 500 34
+INFO 2024-08-26 21:40:12,756 django.utils.autoreload MainThread 1552 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 18076 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:40:14,189 django.utils.autoreload MainThread 7928 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 15328 Watching for file changes with StatReloader
+INFO 2024-08-26 21:40:27,010 django.utils.autoreload MainThread 7928 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 15328 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:40:28,424 django.utils.autoreload MainThread 2484 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 3216 Watching for file changes with StatReloader
+INFO 2024-08-26 21:40:34,103 django.utils.autoreload MainThread 2484 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 3216 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:40:35,198 django.utils.autoreload MainThread 17828 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 6528 Watching for file changes with StatReloader
+INFO 2024-08-26 21:40:40,456 django.utils.autoreload MainThread 17828 autoreload autoreload.py 266 django.utils.autoreload trigger_reload 6528 C:\Users\isabe\Desktop\Nueva carpeta\sumiaproject\analysis\views.py changed, reloading.
+INFO 2024-08-26 21:40:41,851 django.utils.autoreload MainThread 9064 autoreload autoreload.py 668 django.utils.autoreload run_with_reloader 15128 Watching for file changes with StatReloader

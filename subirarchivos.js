@@ -20,13 +20,7 @@ fileInput.addEventListener('change', (e) => {
 
     if (allowedTypes.includes(fileType)) {
         const fileName = file.name;
-        const message = messageInput.value;
-        if (message.trim() !== '') {
-            messageInput.value = `${message}\nArchivo: ${fileName}`;
-        } else {
-            alert('Por favor, escriba un mensaje antes de subir un archivo');
-            fileInput.value = '';
-        }
+        messageInput.value = `Archivo: ${fileName}`;
     } else {
         alert('Solo se aceptan archivos Word (.docx) y PDF');
         fileInput.value = '';
@@ -56,15 +50,11 @@ sendButton.addEventListener('click', () => {
     // Envía el archivo seleccionado
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('message', message);
 
     fetch('http://127.0.0.1:8000/analysis/upload/', {
         method: 'POST',
         mode: 'cors',
         body: formData,
-        headers: {
-            'Content-Type': 'multipart/form-data',
-        },
     })
     .then(response => {
         if (!response.ok) {
