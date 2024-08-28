@@ -26,11 +26,15 @@ SECRET_KEY = 'django-insecure-1dnlf)o9zlw2p(=)+5-ibv=)#z(1jd+b6p6kyac$hxeyn+9!#8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+FILE_CHARSET = 'utf-8'
+
 ALLOWED_HOSTS = []
 
 CORS_ALLOWED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000']
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+APPEND_SLASH = False
 
 FORMATTERS = {
     "verbose": {

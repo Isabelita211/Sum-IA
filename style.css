@@ -34,42 +34,22 @@ body {
     border-radius: 15px;
 }
 
-#message-input::placeholder {
-    color: #000000; /* Cambia #ccc por el color que deseas */
-}
-
-#message-input {
-    flex: 1; /* Ocupa todo el espacio disponible */
+#file-input-button {
+    flex: 1; /* Ocupa la mayor parte del espacio disponible */
     padding: 15px 20px; /* Agrega un padding a los lados */
     border: none;
     border-radius: 40px;
     font-size: 16px;
     background-color: #747474; /* Fondo oscuro */
     color: #000000; /* Texto negro */
-    resize: none; /* No permite que el usuario cambie el tamaño del textarea */
     width: 100%; /* Ocupa todo el ancho */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra leve */
 }
 
-#upload-button {
-    margin-left: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 30px;
-    background-color: #747474; /* Fondo oscuro */
-    color: #000000; /* Texto negro */
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra leve */
-}
-
-#upload-button svg {
-    width: 30px;
-    height: 30px;
-    fill: #fff;
-}
-
 #send-button {
-    margin-left: 10px;
+    order: -1; /* Coloca el botón a la izquierda del input */
+    margin-left: 0; /* Quita el margen izquierdo */
+    margin-right: 10px; /* Agrega un margen derecho para separar del input */
     background-color: #747474; /* Fondo oscuro */
     border: none; /* Elimina el borde del botón */
     padding: 10px; /* Agrega un padding para que el botón tenga espacio */

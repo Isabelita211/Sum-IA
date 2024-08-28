@@ -18,50 +18,68 @@ nltk.download('punkt')
 @require_http_methods(['POST'])
 def upload_file(request):
     try:
-        uploaded_file = request.FILES['file']
+        uploaded_file = request.FILES.get('file')
+        print(request.FILES)
+        if uploaded_file:
+            # Configura la codificación del archivo
+            uploaded_file.charset = 'utf-8'
 
-        # Valida el tamaño del archivo
-        if uploaded_file.size > 30 * 1024 * 1024:  # 30MB
-            return JsonResponse({'error': 'Archivo demasiado grande'}, status=400)
+            # Valida el tamaño del archivo
+            if uploaded_file.size > 30 * 1024 * 1024:  # 30MB
+                return JsonResponse({'error': 'Archivo demasiado grande'}, status=400)
 
-        # Lee el contenido del archivo
-        file_contents = uploaded_file.read()
-        encoding = chardet.detect(file_contents)['encoding']
+            # Lee el contenido del archivo en chunks
+            chunk_size = 1024 * 1024  # 1MB
+            file_contents = bytearray()
+            while True:
+                chunk = uploaded_file.read(chunk_size)
+                if not chunk:
+                    break
+                file_contents.extend(chunk)
 
-        # Analiza el contenido del archivo usando NLTK
-        try:
-            nltk.data.find('tokenizers/punkt')
-            nltk.data.find('corpora/stopwords')
-        except LookupError as e:
-            logger.error(f"Error downloading NLTK resources: {e}")
-            nltk.download('punkt')
-            nltk.download('stopwords')
+            # Detecta la codificación del archivo
+            encoding = chardet.detect(file_contents)['encoding']
+            if encoding is None:
+                logger.error("No se pudo detectar la codificación del archivo")
+                return JsonResponse({'error': 'No se pudo detectar la codificación del archivo'}, status=400)
 
-        stop_words = set(stopwords.words('spanish'))
-        try:
-            tokens = word_tokenize(file_contents.decode(encoding))
-        except UnicodeDecodeError as e:
-            logger.error(f"Error decoding file contents: {e}")
-            return JsonResponse({'error': 'Error decoding file contents'}, status=400)
+            # Analiza el contenido del archivo utilizando NLTK
+            try:
+                nltk.data.find('tokenizers/punkt')
+                nltk.data.find('corpora/stopwords')
+            except LookupError as e:
+                logger.error(f"Error al descargar los recursos de NLTK: {e}")
+                nltk.download('punkt')
+                nltk.download('stopwords')
 
-        filtered_text = ' '.join([word for word in tokens if word.casefold() not in stop_words])
+            stop_words = set(stopwords.words('spanish'))
+            try:
+                tokens = word_tokenize(file_contents.decode(encoding))
+            except UnicodeDecodeError as e:
+                logger.error(f"Error al decodificar el contenido del archivo: {e}")
+                return JsonResponse({'error': 'Error al decodificar el contenido del archivo'}, status=400)
 
-        # Crea el analisis del archivo
-        analysis_result = f"Análisis del archivo:\n{filtered_text}"
+            filtered_text = ' '.join([word for word in tokens if word.casefold() not in stop_words])
 
-        # Retorna JSON response
-        response_data = {
-            'analysis_result': analysis_result,
-            'debug': 'Received request: ' + str(request)
-        }
-        response = JsonResponse(response_data, safe=False)
-        print(type(response))  # Debería imprimir <class 'django.http.JsonResponse'>
-        print(response.content)  # Debería imprimir el contenido de la respuesta en formato JSON
-        print(response.status_code)  # Debería imprimir 200
-        print(response.headers)  # Debería imprimir las cabeceras de la respuesta
-        response['Access-Control-Allow-Origin'] = '*'
-        response['Access-Control-Allow-Headers'] = ', '.join(default_headers)
-        return response
+            # Crea el análisis del archivo
+            analysis_result = f"Análisis del archivo:\n{filtered_text}"
+
+            # Retorna JSON response
+            response_data = {
+                'analysis_result': analysis_result,
+                'debug': 'Received request: ' + str(request)
+            }
+            response = JsonResponse(response_data, safe=False)
+            print(type(response))  # Debería imprimir <class 'django.http.JsonResponse'>
+            print(response.content)  # Debería imprimir el contenido de la respuesta en formato JSON
+            print(response.status_code)  # Debería imprimir 200
+            print(response.headers)  # Debería imprimir las cabeceras de la respuesta
+            response['Access-Control-Allow-Origin'] = '*'
+            response['Access-Control-Allow-Headers'] = ', '.join(default_headers)
+            return response
+        else:
+            # Devolver un error si no se proporcionó un archivo
+            return JsonResponse({'error': 'No file uploaded'}, status=400)
     except Exception as e:
-        logger.error(f"Error occurred: {e}")
+        logger.error(f"Error ocurrido: {e}")
         return JsonResponse({'error': 'Internal server error'}, status=500)
