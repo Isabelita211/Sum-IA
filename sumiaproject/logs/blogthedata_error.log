@@ -71,3 +71,5 @@ WARNING 2024-08-27 21:14:21,245 django.request Thread-1 (process_request_thread)
 WARNING 2024-08-27 21:14:21,261 django.server Thread-1 (process_request_thread) 11780 basehttp basehttp.py 213 django.server log_message 10600 "POST /analysis/upload/ HTTP/1.1" 400 65
 WARNING 2024-08-27 21:24:14,380 django.request Thread-1 (process_request_thread) 15100 log log.py 248 django.request log_response 1588 Bad Request: /analysis/upload/
 WARNING 2024-08-27 21:24:14,382 django.server Thread-1 (process_request_thread) 15100 basehttp basehttp.py 213 django.server log_message 1588 "POST /analysis/upload/ HTTP/1.1" 400 65
+WARNING 2024-08-27 21:31:17,321 django.request Thread-1 (process_request_thread) 4924 log log.py 248 django.request log_response 5084 Bad Request: /analysis/upload/
+WARNING 2024-08-27 21:31:17,322 django.server Thread-1 (process_request_thread) 4924 basehttp basehttp.py 213 django.server log_message 5084 "POST /analysis/upload/ HTTP/1.1" 400 65
