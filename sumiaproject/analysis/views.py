@@ -17,21 +17,22 @@ def upload_file(request):
     try:
         # Obtiene el archivo subido
         uploaded_file = request.FILES.get('file')
-        print(request.FILES)
+
         if uploaded_file:
             # Valida el tipo de archivo
             file_type, _ = mimetypes.guess_type(uploaded_file.name)
-            if file_type != 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-                # Retorna un error si el archivo no es de tipo Word
+            if file_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+                # Lee el contenido del archivo de Word
+                doc = docx.Document(uploaded_file)
+                text = []
+                for para in doc.paragraphs:
+                    text.append(para.text)
+                text = '\n'.join(text)
+            else:
+                # Retorna un error si el archivo no es de tipo Word o PDF
                 return JsonResponse({'error': 'Archivo no soportado'}, status=400)
 
-            # Lee el contenido del archivo de Word
-            doc = docx.Document(uploaded_file)
-            text = []
-            for para in doc.paragraphs:
-                text.append(para.text)
-            text = '\n'.join(text)
-            # Extrae el resumen del documento de Word
+            # Extrae el resumen del documento
             summary = ''
             sentences = text.split('. ')
             for sentence in sentences:
