@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Agrega el nombre del archivo subido
             const fileNameSpan = document.createElement('span');
+            fileNameSpan.className = 'user-message-text'
             fileNameSpan.textContent = selectedFile.name; // Asigna el nombre del archivo aquí
             messageLi.appendChild(fileNameSpan);
 
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Agrega el mensaje de la ia
                 const iaMessageSpan = document.createElement('span');
+                iaMessageSpan.className = 'ia-message-text'
                 iaMessageSpan.textContent = data.analysis_result; // Asigna el resultado de la análisis aquí
                 messageLi.appendChild(iaMessageSpan);
 

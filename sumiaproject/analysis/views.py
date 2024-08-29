@@ -1,85 +1,65 @@
 import os
-import nltk
+import pytesseract
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
 from corsheaders.defaults import default_headers
-import chardet
+import docx
 import logging
+import mimetypes
 
 # Configuración del logger
 logger = logging.getLogger(__name__)
-
-nltk.download('punkt')
 
 @csrf_exempt
 @require_http_methods(['POST'])
 def upload_file(request):
     try:
+        # Obtiene el archivo subido
         uploaded_file = request.FILES.get('file')
         print(request.FILES)
         if uploaded_file:
-            # Configura la codificación del archivo
-            uploaded_file.charset = 'utf-8'
+            # Valida el tipo de archivo
+            file_type, _ = mimetypes.guess_type(uploaded_file.name)
+            if file_type != 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+                # Retorna un error si el archivo no es de tipo Word
+                return JsonResponse({'error': 'Archivo no soportado'}, status=400)
+
+            # Lee el contenido del archivo de Word
+            doc = docx.Document(uploaded_file)
+            text = []
+            for para in doc.paragraphs:
+                text.append(para.text)
+            text = '\n'.join(text)
+            # Extrae el resumen del documento de Word
+            summary = ''
+            sentences = text.split('. ')
+            for sentence in sentences:
+                if len(sentence) > 20:  # Filtra oraciones cortas
+                    summary += sentence + '. '
+            summary = summary.strip()
 
             # Valida el tamaño del archivo
             if uploaded_file.size > 30 * 1024 * 1024:  # 30MB
+                # Retorna un error si el archivo es demasiado grande
                 return JsonResponse({'error': 'Archivo demasiado grande'}, status=400)
 
-            # Lee el contenido del archivo en chunks
-            chunk_size = 1024 * 1024  # 1MB
-            file_contents = bytearray()
-            while True:
-                chunk = uploaded_file.read(chunk_size)
-                if not chunk:
-                    break
-                file_contents.extend(chunk)
-
-            # Detecta la codificación del archivo
-            encoding = chardet.detect(file_contents)['encoding']
-            if encoding is None:
-                logger.error("No se pudo detectar la codificación del archivo")
-                return JsonResponse({'error': 'No se pudo detectar la codificación del archivo'}, status=400)
-
-            # Analiza el contenido del archivo utilizando NLTK
-            try:
-                nltk.data.find('tokenizers/punkt')
-                nltk.data.find('corpora/stopwords')
-            except LookupError as e:
-                logger.error(f"Error al descargar los recursos de NLTK: {e}")
-                nltk.download('punkt')
-                nltk.download('stopwords')
-
-            stop_words = set(stopwords.words('spanish'))
-            try:
-                tokens = word_tokenize(file_contents.decode(encoding))
-            except UnicodeDecodeError as e:
-                logger.error(f"Error al decodificar el contenido del archivo: {e}")
-                return JsonResponse({'error': 'Error al decodificar el contenido del archivo'}, status=400)
-
-            filtered_text = ' '.join([word for word in tokens if word.casefold() not in stop_words])
-
             # Crea el análisis del archivo
-            analysis_result = f"Análisis del archivo:\n{filtered_text}"
+            analysis_result = f"Resumen del archivo:\n{summary}"
 
-            # Retorna JSON response
+            # Retorna la respuesta JSON
             response_data = {
                 'analysis_result': analysis_result,
-                'debug': 'Received request: ' + str(request)
+                'debug': 'Solicitud recibida: ' + str(request)
             }
             response = JsonResponse(response_data, safe=False)
-            print(type(response))  # Debería imprimir <class 'django.http.JsonResponse'>
-            print(response.content)  # Debería imprimir el contenido de la respuesta en formato JSON
-            print(response.status_code)  # Debería imprimir 200
-            print(response.headers)  # Debería imprimir las cabeceras de la respuesta
             response['Access-Control-Allow-Origin'] = '*'
             response['Access-Control-Allow-Headers'] = ', '.join(default_headers)
             return response
         else:
-            # Devolver un error si no se proporcionó un archivo
-            return JsonResponse({'error': 'No file uploaded'}, status=400)
+            # Retorna un error si no se proporcionó un archivo
+            return JsonResponse({'error': 'No se ha subido ningún archivo'}, status=400)
     except Exception as e:
+        # Registra el error y retorna un error interno del servidor
         logger.error(f"Error ocurrido: {e}")
-        return JsonResponse({'error': 'Internal server error'}, status=500)
+        return JsonResponse({'error': 'Error interno del servidor'}, status=500)

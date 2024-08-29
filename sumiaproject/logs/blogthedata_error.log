@@ -73,3 +73,57 @@ WARNING 2024-08-27 21:24:14,380 django.request Thread-1 (process_request_thread)
 WARNING 2024-08-27 21:24:14,382 django.server Thread-1 (process_request_thread) 15100 basehttp basehttp.py 213 django.server log_message 1588 "POST /analysis/upload/ HTTP/1.1" 400 65
 WARNING 2024-08-27 21:31:17,321 django.request Thread-1 (process_request_thread) 4924 log log.py 248 django.request log_response 5084 Bad Request: /analysis/upload/
 WARNING 2024-08-27 21:31:17,322 django.server Thread-1 (process_request_thread) 4924 basehttp basehttp.py 213 django.server log_message 5084 "POST /analysis/upload/ HTTP/1.1" 400 65
+WARNING 2024-08-28 18:08:03,290 django.request Thread-1 (process_request_thread) 1572 log log.py 248 django.request log_response 11504 Bad Request: /analysis/upload/
+WARNING 2024-08-28 18:08:03,298 django.server Thread-1 (process_request_thread) 1572 basehttp basehttp.py 213 django.server log_message 11504 "POST /analysis/upload/ HTTP/1.1" 400 65
+ERROR 2024-08-28 18:24:52,383 django.request Thread-1 (process_request_thread) 4936 log log.py 248 django.request log_response 8892 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 18:24:52,385 django.server Thread-1 (process_request_thread) 4936 basehttp basehttp.py 213 django.server log_message 8892 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 18:26:43,420 django.request Thread-1 (process_request_thread) 7624 log log.py 248 django.request log_response 11164 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 18:26:43,421 django.server Thread-1 (process_request_thread) 7624 basehttp basehttp.py 213 django.server log_message 11164 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 18:30:28,337 django.request Thread-1 (process_request_thread) 17912 log log.py 248 django.request log_response 17844 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 18:30:28,341 django.server Thread-1 (process_request_thread) 17912 basehttp basehttp.py 213 django.server log_message 17844 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 18:33:27,949 django.request Thread-1 (process_request_thread) 13224 log log.py 248 django.request log_response 5916 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 18:33:27,950 django.server Thread-1 (process_request_thread) 13224 basehttp basehttp.py 213 django.server log_message 5916 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 18:34:17,434 django.request Thread-1 (process_request_thread) 17576 log log.py 248 django.request log_response 15396 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 18:34:17,436 django.server Thread-1 (process_request_thread) 17576 basehttp basehttp.py 213 django.server log_message 15396 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 18:36:31,006 django.request Thread-1 (process_request_thread) 17176 log log.py 248 django.request log_response 12992 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 18:36:31,008 django.server Thread-1 (process_request_thread) 17176 basehttp basehttp.py 213 django.server log_message 12992 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 19:44:26,955 django.request Thread-4 (process_request_thread) 14416 log log.py 248 django.request log_response 13440 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 19:44:26,956 django.server Thread-4 (process_request_thread) 14416 basehttp basehttp.py 213 django.server log_message 13440 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 23:05:28,641 django.request Thread-2 (process_request_thread) 8188 log log.py 248 django.request log_response 9056 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 23:05:28,641 django.server Thread-2 (process_request_thread) 8188 basehttp basehttp.py 213 django.server log_message 9056 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 23:24:17,791 django.request Thread-1 (process_request_thread) 14964 log log.py 248 django.request log_response 2788 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 23:24:17,792 django.server Thread-1 (process_request_thread) 14964 basehttp basehttp.py 213 django.server log_message 2788 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 23:25:51,325 django.request Thread-1 (process_request_thread) 13324 log log.py 248 django.request log_response 10292 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 23:25:51,327 django.server Thread-1 (process_request_thread) 13324 basehttp basehttp.py 213 django.server log_message 10292 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 23:33:03,415 django.request Thread-1 (process_request_thread) 15620 log log.py 248 django.request log_response 5928 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 23:33:03,417 django.server Thread-1 (process_request_thread) 15620 basehttp basehttp.py 213 django.server log_message 5928 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-28 23:34:13,636 django.request Thread-1 (process_request_thread) 15236 log log.py 248 django.request log_response 13736 Internal Server Error: /analysis/upload/
+ERROR 2024-08-28 23:34:13,638 django.server Thread-1 (process_request_thread) 15236 basehttp basehttp.py 213 django.server log_message 13736 "POST /analysis/upload/ HTTP/1.1" 500 34
+WARNING 2024-08-29 00:02:51,625 django.request Thread-1 (process_request_thread) 12896 log log.py 248 django.request log_response 13812 Bad Request: /analysis/upload/
+WARNING 2024-08-29 00:02:51,628 django.server Thread-1 (process_request_thread) 12896 basehttp basehttp.py 213 django.server log_message 13812 "POST /analysis/upload/ HTTP/1.1" 400 51
+WARNING 2024-08-29 00:04:06,923 django.request Thread-1 (process_request_thread) 9912 log log.py 248 django.request log_response 13124 Bad Request: /analysis/upload/
+WARNING 2024-08-29 00:04:06,924 django.server Thread-1 (process_request_thread) 9912 basehttp basehttp.py 213 django.server log_message 13124 "POST /analysis/upload/ HTTP/1.1" 400 51
+WARNING 2024-08-29 00:05:30,219 django.request Thread-1 (process_request_thread) 7336 log log.py 248 django.request log_response 12284 Bad Request: /analysis/upload/
+WARNING 2024-08-29 00:05:30,223 django.server Thread-1 (process_request_thread) 7336 basehttp basehttp.py 213 django.server log_message 12284 "POST /analysis/upload/ HTTP/1.1" 400 51
+ERROR 2024-08-29 00:08:26,135 django.request Thread-1 (process_request_thread) 12744 log log.py 248 django.request log_response 16368 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:08:26,136 django.server Thread-1 (process_request_thread) 12744 basehttp basehttp.py 213 django.server log_message 16368 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-29 00:11:17,618 django.request Thread-1 (process_request_thread) 5928 log log.py 248 django.request log_response 10280 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:11:17,619 django.server Thread-1 (process_request_thread) 5928 basehttp basehttp.py 213 django.server log_message 10280 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-29 00:12:41,426 django.request Thread-1 (process_request_thread) 13192 log log.py 248 django.request log_response 5400 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:12:41,430 django.server Thread-1 (process_request_thread) 13192 basehttp basehttp.py 213 django.server log_message 5400 "POST /analysis/upload/ HTTP/1.1" 500 34
+WARNING 2024-08-29 00:14:19,590 django.request Thread-1 (process_request_thread) 6308 log log.py 248 django.request log_response 6760 Bad Request: /analysis/upload/
+WARNING 2024-08-29 00:14:19,590 django.server Thread-1 (process_request_thread) 6308 basehttp basehttp.py 213 django.server log_message 6760 "POST /analysis/upload/ HTTP/1.1" 400 33
+ERROR 2024-08-29 00:22:06,807 django.request Thread-1 (process_request_thread) 1636 log log.py 248 django.request log_response 7116 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:22:06,810 django.server Thread-1 (process_request_thread) 1636 basehttp basehttp.py 213 django.server log_message 7116 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-29 00:23:21,474 django.request Thread-1 (process_request_thread) 18900 log log.py 248 django.request log_response 14932 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:23:21,475 django.server Thread-1 (process_request_thread) 18900 basehttp basehttp.py 213 django.server log_message 14932 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-29 00:24:52,555 django.request Thread-1 (process_request_thread) 11520 log log.py 248 django.request log_response 17088 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:24:52,556 django.server Thread-1 (process_request_thread) 11520 basehttp basehttp.py 213 django.server log_message 17088 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-29 00:28:47,841 django.request Thread-1 (process_request_thread) 18164 log log.py 248 django.request log_response 10880 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:28:47,843 django.server Thread-1 (process_request_thread) 18164 basehttp basehttp.py 213 django.server log_message 10880 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-29 00:35:44,305 django.request Thread-20 (process_request_thread) 9884 log log.py 248 django.request log_response 9528 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:35:44,305 django.server Thread-20 (process_request_thread) 9884 basehttp basehttp.py 213 django.server log_message 9528 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-29 00:38:28,947 django.request Thread-1 (process_request_thread) 1388 log log.py 248 django.request log_response 9160 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:38:28,948 django.server Thread-1 (process_request_thread) 1388 basehttp basehttp.py 213 django.server log_message 9160 "POST /analysis/upload/ HTTP/1.1" 500 34
+ERROR 2024-08-29 00:39:40,522 django.request Thread-1 (process_request_thread) 10488 log log.py 248 django.request log_response 6112 Internal Server Error: /analysis/upload/
+ERROR 2024-08-29 00:39:40,524 django.server Thread-1 (process_request_thread) 10488 basehttp basehttp.py 213 django.server log_message 6112 "POST /analysis/upload/ HTTP/1.1" 500 34
